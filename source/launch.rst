@@ -37,6 +37,18 @@ Linux (including Raspbian).
         User=
         Group=
 
+#.  If running in a externally managed PIP environment (See installation manual page for details), edit the following file to use venv:
+
+    .. code-block:: shell
+
+        sudo nano /etc/systemd/system/mqttany.service
+
+    and change the ExecStart line to read as follows:
+
+    .. code-block:: shell
+
+        ExecStart=/opt/mqttany/mqttany/venv/bin/python3 mqttany.py
+
 #.  Next we need to tell ``systemd`` about our new file:
 
     .. code-block:: shell
