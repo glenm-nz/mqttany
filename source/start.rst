@@ -123,10 +123,23 @@ GitHub repository. The recommended location to clone the repo to is
         sudo chmod -R g+rw /opt/mqttany
 
 #.  Next we need to make sure all of the requirements to run MQTTany are met.
+    
+    Option 1: PIP Installation
+     This option is applicable to environments which PIP dependencies can be directly installed (Not 'Externally Managed')
 
-    .. code-block:: shell
+     .. code-block:: shell
 
         pip3 install -r requirements/mqttany.txt
+
+    Option 2: PIP venv Installation
+     This option is required for Python Externally Managed environments (e.g. Ubuntu >=23.04), where PIP cannot be directly used
+
+     .. code-block:: shell
+
+         sudo python3 -m venv /opt/mqttany/mqttany/venv
+         sudo /opt/mqttany/mqttany/venv/bin/pip3 install -r /opt/mqttany/requirements/mqttany.txt
+         sudo /opt/mqttany/mqttany/venv/bin/pip3 install -r /opt/mqttany/requirements/mqtt.txt
+
 
 #.  Lastly we need to copy the configuration file to where MQTTany expects it.
     You can also specify a configuration file when launching MQTTany if you
